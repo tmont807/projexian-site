@@ -485,6 +485,6 @@ h1,h2,h3,h4,.v,.bignum,.num,.n,.no,.lead,.cred .v,.fact .v,.side-info .v{font-va
 .lg a,.consent a{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:820px){.oppd{grid-template-columns:1fr}.spec2 .r{grid-template-columns:1fr;gap:2px}.chks{grid-template-columns:1fr 1fr}.legal{margin-left:0}}
 .fld .chk{font-size:15px;letter-spacing:0;text-transform:none;color:#3b444b;font-weight:400}
-.leader.solo{grid-template-columns:minmax(0,3fr) minmax(0,9fr)}
-.leader.solo>div{grid-column:2}
+.leader.solo{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2vw,32px);gap:0 clamp(16px,2vw,32px)}
+.leader.solo>div{grid-column:4/11}
 @media(max-width:820px){.leader.solo>div{grid-column:1}}
