@@ -382,6 +382,18 @@ def build():
      ["Strategic partnerships", "Prime contractor relationships", "Subcontracting opportunities", "Business growth strategies", "Market research", "Industry research", "Business opportunity identification"],
      "boardroom", "Meeting room with a long wooden table and chairs", True,
      '<a class="link" style="margin-top:30px" href="contact.html?topic=partnerships">Explore Business Development Services <span class="ar"></span></a>')}
+<section class="svc-block white" id="teaming"><div class="wrap split">
+  <div style="grid-column:1/6" class="rv"><div class="label"><span class="n">02·b</span>For prime contractors</div><h2 class="h2" style="margin-top:18px">Teaming with <em>prime contractors.</em></h2>
+    <p class="body">Large primes need dependable small businesses to perform parts of their contracts and meet their small business subcontracting goals. Projexian can join your team as a registered small business subcontractor.</p>
+    <p class="src" style="margin-top:22px">UEI MAVQJ6NPEL59 · CAGE 25TN9 · NAICS 561210, 561720, 561730 and more</p>
+    <a class="btn" style="margin-top:28px" href="contact.html?topic=teaming">Discuss teaming</a></div>
+  <div style="grid-column:7/13" class="rv">
+    <div class="label">What we bring</div>
+    <ul class="items" style="grid-template-columns:1fr;margin-top:14px"><li>Facility services across all 50 states and U.S. territories: janitorial, grounds, snow, pest control, refuse and site support</li><li>A network of vetted local crews near the place of performance, managed through one point of contact</li><li>Compliance handled up front: wage determinations, insurance and site access requirements</li><li>Daily tracking of federal solicitations, so we can help you spot and prepare for upcoming bids</li></ul>
+    <div class="label" style="margin-top:34px">How we work with primes</div>
+    <ul class="items" style="grid-template-columns:1fr;margin-top:14px"><li>Teaming agreements before you bid, or subcontracts after you win</li><li>We price our scope, provide our registration and capability details, and support your proposal</li><li>One accountable contact for your program manager</li></ul>
+  </div>
+</div></section>
 <section class="svc-block dark" id="lead-generation"><div class="wrap split">
   <div style="grid-column:1/6">{img("binders", "Row of colored binders on an office shelf", "rv")}</div>
   <div style="grid-column:7/13" class="rv"><div class="num">03</div><h2 class="h2">Lead <em>Generation.</em></h2>
@@ -580,7 +592,7 @@ def build():
     <div class="fld"><label for="c-co">Company name <i>*</i></label><input id="c-co" name="Company" autocomplete="organization" required></div>
     <div class="fld"><label for="c-email">Business email <i>*</i></label><input id="c-email" type="email" name="email" autocomplete="email" required></div>
     <div class="fld"><label for="c-phone">Phone number</label><input id="c-phone" type="tel" name="Phone" autocomplete="tel"></div>
-    <div class="fld"><label for="c-svc">Service requested <i>*</i></label><select id="c-svc" name="Service requested" required><option value="">Select</option><option value="Government contracting support" data-topic="contracting">Government contracting support</option><option value="Lead generation" data-topic="leads">Lead generation</option><option value="Subcontracting and partnerships" data-topic="partnerships">Subcontracting and partnerships</option><option value="Procurement research" data-topic="research">Procurement research</option><option value="Business development" data-topic="bd">Business development</option><option value="Other">Other</option></select></div>
+    <div class="fld"><label for="c-svc">Service requested <i>*</i></label><select id="c-svc" name="Service requested" required><option value="">Select</option><option value="Government contracting support" data-topic="contracting">Government contracting support</option><option value="Lead generation" data-topic="leads">Lead generation</option><option value="Subcontracting and partnerships" data-topic="partnerships">Subcontracting and partnerships</option><option value="Teaming with a prime" data-topic="teaming">Teaming with a prime</option><option value="Procurement research" data-topic="research">Procurement research</option><option value="Business development" data-topic="bd">Business development</option><option value="Other">Other</option></select></div>
     <div class="fld"><label for="c-ind">Industry</label><select id="c-ind" name="Industry"><option value="">Select</option>{"".join(f'<option value="{n}" data-slug="{s}">{n}</option>' for s, n, *_ in INDUSTRIES)}<option>Other</option></select></div>
     <div class="fld full"><label for="c-desc">Project description <i>*</i></label><textarea id="c-desc" name="Project description" required></textarea></div>
     <div class="fld full"><label for="c-more">Additional comments</label><textarea id="c-more" name="Additional comments" style="min-height:80px"></textarea></div>
