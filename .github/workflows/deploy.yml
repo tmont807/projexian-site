@@ -1,0 +1,55 @@
+name: Build and deploy site
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "31 12 * * *"   # every morning, about 6:31 AM Chicago time, after the SAM.gov data refresh
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Pull today's opportunity and award data
+        run: |
+          base=https://raw.githubusercontent.com/tmont807/sam-packages/main
+          for f in feed.json awards.json; do
+            if curl -fsSL "$base/$f" -o "data/$f.new" && python -c "import json,sys;json.load(open('data/$f.new'))"; then
+              mv "data/$f.new" "data/$f"; echo "updated $f"
+            else
+              rm -f "data/$f.new"; echo "kept previous $f"
+            fi
+          done
+      - name: Build
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://tmont807.github.io/projexian-site' }}
+        run: python build.py
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
