@@ -1,5 +1,5 @@
 (function(){
-  if(window.top!==window.self){try{window.top.location=window.location.href;}catch(e){document.documentElement.style.display='none';}}
+  if(window.top!==window.self&&!document.querySelector('meta[name="pjx-preview"]')){try{window.top.location=window.location.href;}catch(e){document.documentElement.style.display='none';}}
   var hdr=document.getElementById('hdr'),btn=document.getElementById('menuBtn');
   function onScroll(){hdr.classList.toggle('scrolled',window.scrollY>8);}
   addEventListener('scroll',onScroll,{passive:true});onScroll();
@@ -17,5 +17,7 @@
   if(svc&&q.get('topic')){[].forEach.call(svc.options,function(o){if(o.dataset.topic===q.get('topic'))svc.value=o.value;});}
   if(ind&&q.get('industry')){[].forEach.call(ind.options,function(o){if(o.dataset.slug===q.get('industry'))ind.value=o.value;});}
   var opp=q.get('opp'),desc=document.getElementById('c-desc')||document.getElementById('p-notes');if(opp&&desc&&!desc.value)desc.value=(desc.id==='p-notes'?'Interested in performing: ':'I would like to discuss this opportunity: ')+opp.slice(0,300);
-  document.querySelectorAll('form.f').forEach(function(f){f.addEventListener('submit',function(){var b=f.querySelector('button[type=submit]');if(b){b.disabled=true;b.textContent='Sending…';}});});
+  var preview=!!document.querySelector('meta[name="pjx-preview"]');
+  document.querySelectorAll('form.f').forEach(function(f){f.addEventListener('submit',function(ev){
+    if(preview){ev.preventDefault();var n=f.querySelector('.pv-note');if(!n){n=document.createElement('p');n.className='privacy pv-note';n.style.color='var(--navy)';f.appendChild(n);}n.textContent='Preview only: the form works and validates, but nothing is sent until the site is live. On the real site this goes straight to tyler@projexian.com.';return;}var b=f.querySelector('button[type=submit]');if(b){b.disabled=true;b.textContent='Sending…';}});});
 })();

@@ -34,8 +34,8 @@ def page(fn, title, desc, body, extra_head="", extra_js="", sub=False, noindex=F
     robots = '<meta name="robots" content="noindex">' if noindex else ""
     ld = {"@context": "https://schema.org", "@type": "Organization", "name": "Projexian LLC", "url": SITE_URL,
           "email": EMAIL, "telephone": "+1-" + PHONE,
-          "address": {"@type": "PostalAddress", "streetAddress": "1116 Woodland Heights Blvd", "addressLocality": "Streamwood",
-                      "addressRegion": "IL", "postalCode": "60107", "addressCountry": "US"}}
+          "address": {"@type": "PostalAddress", "addressLocality": "Chicago",
+                      "addressRegion": "IL", "addressCountry": "US"}}
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -72,7 +72,7 @@ def page(fn, title, desc, body, extra_head="", extra_js="", sub=False, noindex=F
   <div class="top">
     <div><a class="logo" href="index.html" aria-label="Projexian home">{LOGO}</a><p class="tag">Government contracting, business development and opportunity intelligence.</p></div>
     <div><h4>Firm</h4><ul><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="industries.html">Industries</a></li><li><a href="opportunities.html">Opportunities</a></li><li><a href="lead-generation.html">Lead Generation</a></li><li><a href="partners.html">Partner Network</a></li></ul></div>
-    <div><h4>Contact</h4><ul><li><a href="mailto:{EMAIL}">{EMAIL}</a></li><li><a href="tel:+1{PHONE.replace('-', '')}">{PHONE}</a></li><li>1116 Woodland Heights Blvd<br>Streamwood, IL 60107</li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="mailto:{EMAIL}">{EMAIL}</a></li><li><a href="tel:+1{PHONE.replace('-', '')}">{PHONE}</a></li><li>Chicago, Illinois</li></ul></div>
     <div><h4>Registration</h4><ul><li>SAM.gov · Active</li><li>UEI MAVQJ6NPEL59</li><li>CAGE 25TN9</li><li><a href="assets/projexian-capabilities-statement.pdf">Capabilities statement</a></li></ul></div>
   </div>
   <div class="bot"><span>© 2026 Projexian LLC. All rights reserved.</span><span class="disc">Projexian LLC is a private company. It is not affiliated with, and is not endorsed by, any government agency. Photographs are illustrative and do not depict Projexian projects. <a href="terms.html">Terms of Use</a> · <a href="privacy.html">Privacy</a> · <a href="accessibility.html">Accessibility</a> · <a href="credits.html">Photo credits</a></span></div>
@@ -159,6 +159,9 @@ def load_data():
     today = _date.today().isoformat()
     feed["items"] = [i for i in feed["items"] if i.get("due", "") >= today]
     for i in feed["items"]:
+        for k, v in list(i.items()):
+            if isinstance(v, str):
+                i[k] = v.replace("\ufffd", "'")
         i["u"] = slugify(i["t"], i.get("id") or i["t"] + i["due"])
     return feed, awards
 
@@ -457,7 +460,7 @@ def build():
   <p class="lead rv">We combine daily market research with hands-on contracting work. That means we see what agencies are buying, understand how they buy it, and know which businesses are positioned to deliver.</p>
   <div class="facts rv">
     <div class="fact"><div class="k">Legal name</div><div class="v">Projexian LLC</div><div class="d">Limited liability company</div></div>
-    <div class="fact"><div class="k">Headquarters</div><div class="v">Streamwood, Illinois</div><div class="d">Serving clients nationwide</div></div>
+    <div class="fact"><div class="k">Headquarters</div><div class="v">Chicago, Illinois</div><div class="d">Serving clients nationwide</div></div>
     <div class="fact"><div class="k">Registration</div><div class="v">SAM.gov · Active</div><div class="d">UEI MAVQJ6NPEL59 · CAGE 25TN9</div></div>
   </div>
 </div></section>
@@ -570,7 +573,7 @@ def build():
     <div class="side-info">
       <div><div class="k">Email</div><div class="v"><a href="mailto:{EMAIL}">{EMAIL}</a></div></div>
       <div><div class="k">Phone</div><div class="v"><a href="tel:+1{PHONE.replace('-', '')}">{PHONE}</a></div></div>
-      <div><div class="k">Office</div><div class="v">1116 Woodland Heights Blvd<br>Streamwood, IL 60107</div></div>
+      <div><div class="k">Headquarters</div><div class="v">Chicago, Illinois</div></div>
       <div><div class="k">Registration</div><div class="v" style="font-size:20px">UEI MAVQJ6NPEL59 · CAGE 25TN9</div></div>
     </div>
     <a class="link" style="margin-top:28px" href="assets/projexian-capabilities-statement.pdf">Download capabilities statement <span aria-hidden="true">↓</span></a>
@@ -694,7 +697,7 @@ def build():
         ("Indemnification", "<p>You agree to indemnify and hold Projexian LLC harmless from claims arising from your misuse of the Site or your violation of these terms.</p>"),
         ("Governing law", "<p>These terms are governed by the laws of the State of Illinois, without regard to conflict-of-law rules. Any dispute will be brought in the state or federal courts located in Cook County, Illinois.</p>"),
         ("Changes", "<p>We may update these terms from time to time. The effective date above shows when they last changed. Continued use of the Site means you accept the updated terms.</p>"),
-        ("Contact", f"<p>Questions about these terms: {C}, Projexian LLC, 1116 Woodland Heights Blvd, Streamwood, IL 60107.</p>"),
+        ("Contact", f"<p>Questions about these terms: {C}, Projexian LLC, Chicago, Illinois.</p>"),
     ], "Please read these terms carefully before using this website.")
 
     pages["privacy.html"] = legal("privacy.html", "Privacy Notice", "Privacy <em>Notice.</em>", [
