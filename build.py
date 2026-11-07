@@ -33,9 +33,7 @@ def page(fn, title, desc, body, extra_head="", extra_js="", sub=False, noindex=F
     base = '<base href="../">' if sub else ""
     robots = '<meta name="robots" content="noindex">' if noindex else ""
     ld = {"@context": "https://schema.org", "@type": "Organization", "name": "Projexian LLC", "url": SITE_URL,
-          "email": EMAIL, "telephone": "+1-" + PHONE,
-          "address": {"@type": "PostalAddress", "addressLocality": "Chicago",
-                      "addressRegion": "IL", "addressCountry": "US"}}
+          "email": EMAIL, "telephone": "+1-" + PHONE}
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -72,7 +70,7 @@ def page(fn, title, desc, body, extra_head="", extra_js="", sub=False, noindex=F
   <div class="top">
     <div><a class="logo" href="index.html" aria-label="Projexian home">{LOGO}</a><p class="tag">Government contracting, business development and opportunity intelligence.</p></div>
     <div><h4>Firm</h4><ul><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="industries.html">Industries</a></li><li><a href="opportunities.html">Opportunities</a></li><li><a href="lead-generation.html">Lead Generation</a></li><li><a href="partners.html">Partner Network</a></li></ul></div>
-    <div><h4>Contact</h4><ul><li><a href="mailto:{EMAIL}">{EMAIL}</a></li><li><a href="tel:+1{PHONE.replace('-', '')}">{PHONE}</a></li><li>Chicago, Illinois</li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="mailto:{EMAIL}">{EMAIL}</a></li><li><a href="tel:+1{PHONE.replace('-', '')}">{PHONE}</a></li></ul></div>
     <div><h4>Registration</h4><ul><li>SAM.gov · Active</li><li>UEI MAVQJ6NPEL59</li><li>CAGE 25TN9</li><li><a href="assets/projexian-capabilities-statement.pdf">Capabilities statement</a></li></ul></div>
   </div>
   <div class="bot"><span>© 2026 Projexian LLC. All rights reserved.</span><span class="disc">Projexian LLC is a private company. It is not affiliated with, and is not endorsed by, any government agency. Photographs are illustrative and do not depict Projexian projects. <a href="terms.html">Terms of Use</a> · <a href="privacy.html">Privacy</a> · <a href="accessibility.html">Accessibility</a> · <a href="credits.html">Photo credits</a></span></div>
@@ -460,7 +458,7 @@ def build():
   <p class="lead rv">We combine daily market research with hands-on contracting work. That means we see what agencies are buying, understand how they buy it, and know which businesses are positioned to deliver.</p>
   <div class="facts rv">
     <div class="fact"><div class="k">Legal name</div><div class="v">Projexian LLC</div><div class="d">Limited liability company</div></div>
-    <div class="fact"><div class="k">Headquarters</div><div class="v">Chicago, Illinois</div><div class="d">Serving clients nationwide</div></div>
+    <div class="fact"><div class="k">Coverage</div><div class="v">Nationwide</div><div class="d">All 50 states and U.S. territories</div></div>
     <div class="fact"><div class="k">Registration</div><div class="v">SAM.gov · Active</div><div class="d">UEI MAVQJ6NPEL59 · CAGE 25TN9</div></div>
   </div>
 </div></section>
@@ -489,8 +487,7 @@ def build():
 
 <section class="sec"><div class="wrap">
   <div class="head-row"><div class="label rv"><span class="n">04</span>Leadership</div><h2 class="h2 rv">Leadership</h2></div>
-  <div class="leader rv">
-    <div class="portrait"><span class="mono">TM</span><span class="ph">Portrait to come</span></div>
+  <div class="leader solo rv">
     <div><h3 class="h3">Tyler Montgomery</h3><div class="label" style="margin-top:10px">Founder</div>
       <p class="body" style="margin-top:22px">Tyler founded Projexian to help businesses compete for government work with better information and stronger relationships. He leads the firm's contracting, business development and research work, and is the point of contact for clients, partners and contracting officers.</p>
       <div style="margin-top:30px;display:flex;gap:24px;flex-wrap:wrap"><a class="link" href="mailto:{EMAIL}">{EMAIL} <span class="ar"></span></a><a class="link" href="tel:+1{PHONE.replace('-', '')}">{PHONE} <span class="ar"></span></a></div>
@@ -573,7 +570,6 @@ def build():
     <div class="side-info">
       <div><div class="k">Email</div><div class="v"><a href="mailto:{EMAIL}">{EMAIL}</a></div></div>
       <div><div class="k">Phone</div><div class="v"><a href="tel:+1{PHONE.replace('-', '')}">{PHONE}</a></div></div>
-      <div><div class="k">Headquarters</div><div class="v">Chicago, Illinois</div></div>
       <div><div class="k">Registration</div><div class="v" style="font-size:20px">UEI MAVQJ6NPEL59 · CAGE 25TN9</div></div>
     </div>
     <a class="link" style="margin-top:28px" href="assets/projexian-capabilities-statement.pdf">Download capabilities statement <span aria-hidden="true">↓</span></a>
@@ -697,7 +693,7 @@ def build():
         ("Indemnification", "<p>You agree to indemnify and hold Projexian LLC harmless from claims arising from your misuse of the Site or your violation of these terms.</p>"),
         ("Governing law", "<p>These terms are governed by the laws of the State of Illinois, without regard to conflict-of-law rules. Any dispute will be brought in the state or federal courts located in Cook County, Illinois.</p>"),
         ("Changes", "<p>We may update these terms from time to time. The effective date above shows when they last changed. Continued use of the Site means you accept the updated terms.</p>"),
-        ("Contact", f"<p>Questions about these terms: {C}, Projexian LLC, Chicago, Illinois.</p>"),
+        ("Contact", f"<p>Questions about these terms: {C}, Projexian LLC.</p>"),
     ], "Please read these terms carefully before using this website.")
 
     pages["privacy.html"] = legal("privacy.html", "Privacy Notice", "Privacy <em>Notice.</em>", [
