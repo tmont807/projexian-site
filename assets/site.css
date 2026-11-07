@@ -1,7 +1,7 @@
 /* Projexian — site styles */
 :root{
   --navy:#142638;--char:#20272D;--ivory:#F3F0E9;--white:#FFFFFF;
-  --brass:#A58A5B;--slate:#737D84;--stone:#D9D8D2;
+  --brass:#A58A5B;--brass-ink:#7A6440;--slate:#5E676E;--stone:#D9D8D2;
   --ink:#20272D;--line:#D9D8D2;--line-d:rgba(243,240,233,.16);
   --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
   --sans:"IBM Plex Sans","Source Sans 3",system-ui,sans-serif;
@@ -489,3 +489,14 @@ h1,h2,h3,h4,.v,.bignum,.num,.n,.no,.lead,.cred .v,.fact .v,.side-info .v{font-va
 .leader.solo>div{grid-column:4/11}
 @media(max-width:820px){.leader.solo>div{grid-column:1}}
 @media(max-width:820px){#teaming .split>div+div{margin-top:44px}}
+
+/* accessible text colors (WCAG AA): brass text on light grounds uses the deeper ink; dark grounds keep bright brass */
+.label .n,.svc-row .num,.ind-index a span,.ind-index a:hover,.path .n,.svc-block .num,.ind .no,.principle .n,.step .n,.fld label i,.side-info .v a:hover,.pairs li:before,.ohead button,.mkt .n,.crumb,.orow h3 a:hover,.consent i{color:var(--brass-ink)!important}
+.dark .label .n,.dark .svc-row .num,.dark .svc-block .num,.dark .path .n,.dark .step .n,.ctabox .label,.ticker .lbl,.dsum .label,.docanim .co small{color:var(--brass)!important}
+.ftr .bot{color:#949ca2}
+.hero .meta,.tcell .tc,.o-meta span:last-child,.src,.privacy,.pnote,.fact .k,.cats b,.side-info .k,.spec2 .r span:first-child,.tbl th,.ex,.hint{color:var(--slate)}
+/* mobile menu: the header's blur made it the containing block for the fixed menu, so the menu collapsed to the header height */
+@media(max-width:1080px){.hdr{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--ivory)}.open{overflow:hidden}.nav{bottom:0;height:calc(100vh - 78px);overflow-y:auto}}
+.svc-block.dark .num{color:var(--brass)!important}
+.btn.brass{color:var(--navy)}
+.btn.brass:hover{color:var(--ivory)}
