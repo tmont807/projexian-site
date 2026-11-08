@@ -10,7 +10,7 @@ CSP = ("default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';
        "connect-src 'self'; form-action https://formsubmit.co; base-uri 'self'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests")
 EMAIL = "tyler@projexian.com"
 PHONE = "630-888-8182"
-FORM_ACTION = f"https://formsubmit.co/{EMAIL}"
+FORM_ACTION = "https://formsubmit.co/e5dd4572fbddccd0c37788c16b9b27ad"  # FormSubmit alias for tyler@projexian.com
 
 NAV = [("index.html", "Home"), ("about.html", "About Us"), ("services.html", "Services"),
        ("industries.html", "Industries"), ("opportunities.html", "Opportunities"), ("lead-generation.html", "Lead Generation"), ("contact.html", "Contact")]
