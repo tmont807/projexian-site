@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Builds the Projexian static site (phase 1) into ./dist."""
+import re
 import json, os, shutil, html, urllib.parse
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -147,6 +148,17 @@ def money(v):
     return "$" + format(int(v or 0), ",")
 
 
+EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+\s*(?:@|\(at\)|\[at\])\s*[A-Za-z0-9.\-]+\.(?:gov|mil|com|org|net|edu|us)\b", re.I)
+PHONE_RE = re.compile(r"(?<!\d)(?:\+?1[\s.\-]?)?\(?\d{3}\)?[\s.\-]\d{3}[\s.\-]\d{4}(?:\s*(?:x|ext\.?)\s*\d+)?(?!\d)", re.I)
+
+
+def scrub(text):
+    """Remove email addresses and phone numbers (contact details stay on SAM.gov)."""
+    text = EMAIL_RE.sub("[contact on SAM.gov]", text or "")
+    text = PHONE_RE.sub("[contact on SAM.gov]", text)
+    return re.sub(r"(\[contact on SAM\.gov\][\s,;/]*){2,}", "[contact on SAM.gov] ", text)
+
+
 def load_data():
     feed = {"items": [], "stats": {}, "updated": ""}
     awards = {"past": {}, "recompetes": []}
@@ -159,7 +171,7 @@ def load_data():
     for i in feed["items"]:
         for k, v in list(i.items()):
             if isinstance(v, str):
-                i[k] = v.replace("\ufffd", "'")
+                i[k] = scrub(v.replace("\ufffd", "'")) if k == "d" else v.replace("\ufffd", "'")
         i["u"] = slugify(i["t"], i.get("id") or i["t"] + i["due"])
     return feed, awards
 
