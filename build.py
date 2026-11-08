@@ -91,13 +91,13 @@ def form_hidden(subject, next_page="thanks.html"):
 
 
 INDUSTRIES = [
-    ("construction", "Construction and Infrastructure", "road", "Road crew placing asphalt on a new path",
+    ("construction", "Construction and Infrastructure", "road", "Construction worker drilling foundation piles on a building site",
      "Agencies at every level fund new buildings, roads, utilities and site work. Much of it is packaged for small and mid-size contractors, often through set-asides and subcontracting plans.",
      ["NAICS 236220 · Commercial building", "NAICS 237310 · Highway, street & bridge", "PSC Y · Construction of structures"]),
-    ("facility-maintenance", "Facility Maintenance", "mechanical", "Electrician connecting control wires inside a mechanical room",
+    ("facility-maintenance", "Facility Maintenance", "mechanical", "Technician checking refrigerant gauges on an HVAC unit",
      "Federal buildings, bases, clinics and field offices need ongoing operations and maintenance: mechanical, electrical, plumbing and preventive maintenance under multi-year service contracts.",
      ["NAICS 561210 · Facilities support", "PSC J · Maintenance & repair of equipment", "PSC Z · Maintenance of real property"]),
-    ("janitorial", "Janitorial Services", "janitorial", "Commercial floor sweeper on a paved plaza",
+    ("janitorial", "Janitorial Services", "janitorial", "Crew pressure-washing a building entrance and sidewalk",
      "Custodial work is one of the most frequently solicited service categories in the federal market, from single ranger stations to large office complexes.",
      ["NAICS 561720 · Janitorial services", "PSC S201 · Custodial janitorial", "NAICS 561790 · Other building services"]),
     ("information-technology", "Information Technology", "servers", "Network cabling inside a server rack",
@@ -112,7 +112,7 @@ INDUSTRIES = [
     ("professional-services", "Professional Services", "boardroom", "Empty meeting room with a long wooden table",
      "Program support, administrative services, research and advisory work make up a large share of what agencies purchase each year.",
      ["NAICS 541611 · Management consulting", "NAICS 561110 · Office administration", "PSC R · Professional support"]),
-    ("equipment-supply", "Equipment and Supply Procurement", "port", "Stacked shipping containers at a port",
+    ("equipment-supply", "Equipment and Supply Procurement", "port", "Aerial view of container cranes and shipping containers at a port",
      "Agencies buy and rent equipment, vehicles, generators and supplies, often on short timelines that reward responsive, well-prepared vendors.",
      ["NAICS 532490 · Equipment rental", "NAICS 532120 · Truck rental", "NAICS 423 · Merchant wholesalers"]),
     ("building-renovations", "Building Renovations", "renovation", "Scaffolding wrapped around a building during renovation",
@@ -279,7 +279,7 @@ def build():
     </div>
     <div class="meta rv"><span><b>SAM.gov</b> Active</span><span><b>UEI</b> MAVQJ6NPEL59</span><span><b>CAGE</b> 25TN9</span></div>
   </div>
-  {img("hero", "Classical stone columns of a federal building", eager=True, cap="Illustrative · Federal building, Minneapolis", sizes="(max-width: 1080px) 100vw, 58vw")}
+  {img("hero", "Worker in a hard hat and safety vest pressure-washing the stone wall of a large public building", eager=True, cap="Illustrative · Building renewal, Washington, D.C.", sizes="(max-width: 1080px) 100vw, 58vw")}
 </section>
 <div class="ticker" hidden data-live><div class="wrap"><span class="lbl">Open now · SAM.gov</span><div class="tk-view"><div class="tk-track" id="tickerTrack"></div></div><a class="link" href="opportunities.html" style="color:var(--ivory);flex:none">All opportunities <span class="ar"></span></a></div></div>
 
@@ -324,7 +324,7 @@ def build():
 <section class="sec"><div class="wrap">
   <div class="head-row"><div class="label rv"><span class="n">05</span>Industries</div><h2 class="h2 rv">Industries we <em>support.</em></h2></div>
   <div class="mosaic">
-    {img("capitol", "Dome of a state capitol building against a blue sky", "a rv")}
+    {img("vamc", "Veterans Affairs medical center building on a city street", "a rv")}
     {img("warehouse", "Warehouse aisle with stacked pallets on tall racks", "b rv")}
   </div>
   <div class="ind-index rv">{"".join(f'<a href="industries.html#{s}">{n}<span>{i+1:02d}</span></a>' for i, (s, n, *_ ) in enumerate(INDUSTRIES))}</div>
@@ -373,7 +373,7 @@ def build():
 {svc("government-contracting", "01", "Government", "Contracting.",
      "Federal, state and local procurement follows rules that reward preparation. We help businesses find the right solicitations, understand what is being asked, and respond with complete, compliant submissions.",
      ["Government procurement support", "Contract opportunity research", "Bid and proposal support", "Contract administration", "Federal procurement navigation", "State and local procurement", "Contract strategy"],
-     "courthouse", "Historic federal courthouse building", False,
+     "courthouse", "Columned facade of a federal building and U.S. courthouse", False,
      '<a class="link" style="margin-top:30px" href="contact.html?topic=contracting">Discuss Your Contracting Needs <span class="ar"></span></a>')}
 <section class="svc-block" id="solicitation-to-bid" style="padding-top:clamp(50px,6vw,90px)"><div class="wrap split">
   <div style="grid-column:1/5" class="rv"><div class="label"><span class="n">01·b</span>From solicitation to submission</div><h2 class="h3" style="margin-top:18px">Eighty pages in. <em>One clean bid out.</em></h2><p class="body" style="margin-top:16px">Every solicitation is read in full. The items that decide a bid are pulled out first: scope, deadlines, wage determinations, insurance and site requirements. Then the response is built around them.</p></div>

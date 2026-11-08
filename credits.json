@@ -1,17 +1,17 @@
 {
  "hero": {
   "source": "Wikimedia Commons",
-  "title": "File:Columns at Minneapolis Federal Building, Minneapolis, Minnesota LCCN2013634163.tif",
-  "page": "https://commons.wikimedia.org/wiki/File:Columns_at_Minneapolis_Federal_Building,_Minneapolis,_Minnesota_LCCN2013634163.tif",
+  "title": "File:Cannon Renewal Project - June 2017 (35511278440).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Cannon_Renewal_Project_-_June_2017_(35511278440).jpg",
   "license": "Public domain",
-  "artist": "Carol M. Highsmith"
+  "artist": "USCapitol from Washington, D.C., United States of America"
  },
  "courthouse": {
   "source": "Wikimedia Commons",
-  "title": "File:Historic courthouse, Federal Building and U.S. Courthouse, Wheeling, West Virginia LCCN2010718822.tif",
-  "page": "https://commons.wikimedia.org/wiki/File:Historic_courthouse,_Federal_Building_and_U.S._Courthouse,_Wheeling,_West_Virginia_LCCN2010718822.tif",
-  "license": "Public domain",
-  "artist": "Carol M. Highsmith"
+  "title": "File:Exterior of the Birch Bayh Federal Building & U.S. Courthouse - 2015-08-02 - 04.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Exterior_of_the_Birch_Bayh_Federal_Building_%26_U.S._Courthouse_-_2015-08-02_-_04.jpg",
+  "license": "CC0",
+  "artist": "Alejandro"
  },
  "hall": {
   "source": "Wikimedia Commons",
@@ -36,10 +36,10 @@
  },
  "road": {
   "source": "Wikimedia Commons",
-  "title": "File:Grand Canyon National Park Greenway Trail Construction 0304 (7304486524).jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Grand_Canyon_National_Park_Greenway_Trail_Construction_0304_(7304486524).jpg",
-  "license": "CC BY 2.0",
-  "artist": "Grand Canyon National Park"
+  "title": "File:2025 - free image of a building worker at a construction site - drilling rusty piles in the peat soil for the foundation. Construction photography Amsterdam city by Fons Heijnsbroek; free download urban photo, The Netherlands.tif",
+  "page": "https://commons.wikimedia.org/wiki/File:2025_-_free_image_of_a_building_worker_at_a_construction_site_-_drilling_rusty_piles_in_the_peat_soil_for_the_foundation._Construction_photography_Amsterdam_city_by_Fons_Heijnsbroek;_free_download_urban_photo,_The_Netherlands.tif",
+  "license": "CC0",
+  "artist": "Fons Heijnsbroek"
  },
  "renovation": {
   "source": "Wikimedia Commons",
@@ -57,17 +57,17 @@
  },
  "mechanical": {
   "source": "Wikimedia Commons",
-  "title": "File:Electrician connecting control wires to a panel located in a power sub-station in Queens. (CS179, 10-24-18) (44655487705).jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Electrician_connecting_control_wires_to_a_panel_located_in_a_power_sub-station_in_Queens._(CS179,_10-24-18)_(44655487705).jpg",
-  "license": "CC BY 2.0",
-  "artist": "MTA Capital Construction Mega Projects"
+  "title": "File:379th ECES HVAC technicians combat rising temperatures (8502255).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:379th_ECES_HVAC_technicians_combat_rising_temperatures_(8502255).jpg",
+  "license": "Public domain",
+  "artist": "U.S. Air Force AFCENT by Airman 1st Class Derrick Bole"
  },
  "janitorial": {
   "source": "Wikimedia Commons",
-  "title": "File:Moscow, Paveletskaya Plaza, Comac Innova 85b sweeper, June 2025 02.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Moscow,_Paveletskaya_Plaza,_Comac_Innova_85b_sweeper,_June_2025_02.jpg",
-  "license": "CC0",
-  "artist": "Retired electrician"
+  "title": "File:FEMA - 15772 - Photograph by Win Henderson taken on 09-17-2005 in Louisiana.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:FEMA_-_15772_-_Photograph_by_Win_Henderson_taken_on_09-17-2005_in_Louisiana.jpg",
+  "license": "Public domain",
+  "artist": "Win Henderson"
  },
  "boardroom": {
   "source": "Wikimedia Commons",
@@ -125,19 +125,12 @@
   "license": "Public domain",
   "artist": "United States. Army. Office of the Chief of Engineers"
  },
- "capitol": {
-  "source": "Wikimedia Commons",
-  "title": "File:California State Capitol (top), NW view up.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:California_State_Capitol_(top),_NW_view_up.jpg",
-  "license": "Public domain",
-  "artist": "Photograph:  Radomianin"
- },
  "port": {
   "source": "Wikimedia Commons",
-  "title": "File:Cargo containers (5945899601).jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Cargo_containers_(5945899601).jpg",
-  "license": "CC BY 2.0",
-  "artist": "Roy Luck"
+  "title": "File:Aerial view of shipping containers, and big container cranes at Tacoma's container port -a.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_shipping_containers,_and_big_container_cranes_at_Tacoma%27s_container_port_-a.jpg",
+  "license": "Public domain",
+  "artist": "Brian Harris"
  },
  "modern": {
   "source": "Wikimedia Commons",
@@ -152,5 +145,12 @@
   "page": "https://commons.wikimedia.org/wiki/File:Eisenhower_Executive_Office_Building_20240601.jpg",
   "license": "CC BY 4.0",
   "artist": "\u9890\u56ed\u5c45"
+ },
+ "vamc": {
+  "source": "Wikimedia Commons",
+  "title": "File:VA Medical Center - Philadelphia (53590494459).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:VA_Medical_Center_-_Philadelphia_(53590494459).jpg",
+  "license": "CC BY 2.0",
+  "artist": "ajay_suresh"
  }
 }
