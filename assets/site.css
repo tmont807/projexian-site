@@ -517,3 +517,4 @@ h1,h2,h3,h4,.v,.bignum,.num,.n,.no,.lead,.cred .v,.fact .v,.side-info .v{font-va
 @media(max-width:400px){.creds{grid-template-columns:minmax(0,1fr)}.cred,.cred+.cred{padding:18px 0;border-left:0;border-top:1px solid var(--line-d)}.light .cred+.cred{border-color:var(--line)}.cred .v{overflow-wrap:anywhere}.side-info .v{font-size:20px;overflow-wrap:anywhere}}
 .formwrap>*{min-width:0}
 form.f input,form.f select,form.f textarea{max-width:100%;min-width:0}
+.lost{list-style:none;padding:0;margin-top:34px;display:grid;gap:14px}

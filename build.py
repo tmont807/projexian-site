@@ -5,7 +5,7 @@ import json, os, shutil, html, urllib.parse
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DIST = os.path.join(ROOT, "dist")
-SITE_URL = os.environ.get("SITE_URL", "https://www.projexian.com").rstrip("/")
+SITE_URL = os.environ.get("SITE_URL", "https://projexian.com").rstrip("/")
 CSP = ("default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; "
        "connect-src 'self'; form-action https://formsubmit.co; base-uri 'self'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests")
 EMAIL = "tyler@projexian.com"
@@ -628,6 +628,19 @@ def build():
   <div style="grid-column:4/12;margin-top:34px"><a class="link" href="index.html">Return home <span class="ar"></span></a></div>
 </div></div>""").replace('<meta name="theme-color"', '<meta name="robots" content="noindex"><meta name="theme-color"')
 
+    pages["404.html"] = page("404.html", "Page Not Found | Projexian", "The page you were looking for could not be found.", """
+<div class="wrap"><div class="phead" style="min-height:60vh">
+  <div class="label">Error 404</div>
+  <h1 class="display">Page not <em>found.</em></h1>
+  <p class="body">The page you were looking for has moved, expired or never existed. Contract pages are removed once their response date passes.</p>
+  <ul class="lost" style="grid-column:4/12">
+    <li><a class="link" href="opportunities.html">Browse open opportunities <span class="ar"></span></a></li>
+    <li><a class="link" href="services.html">See our services <span class="ar"></span></a></li>
+    <li><a class="link" href="contact.html">Contact us <span class="ar"></span></a></li>
+    <li><a class="link" href="index.html">Return home <span class="ar"></span></a></li>
+  </ul>
+</div></div>""", noindex=True).replace("<head>", '<head>\n<base href="/">', 1)
+
     pages["privacy.html"] = page("privacy.html", "Privacy Notice | Projexian", "How Projexian handles information submitted through this website.", f"""
 <div class="wrap"><div class="phead"><div class="label">Privacy Notice</div><h1 class="display">Privacy <em>notice.</em></h1>
 <div class="body" style="grid-column:4/11">
@@ -758,12 +771,9 @@ def build():
     sec = f"Contact: mailto:{EMAIL}\nExpires: 2027-11-07T00:00:00.000Z\nPreferred-Languages: en\nCanonical: {SITE_URL}/.well-known/security.txt\n"
     open(os.path.join(DIST, ".well-known", "security.txt"), "w").write(sec)
     open(os.path.join(DIST, ".nojekyll"), "w").write("")
-    urls = "".join(f"<url><loc>{SITE_URL}/{'' if fn == 'index.html' else fn}</loc></url>" for fn in list(pages) + opp_fns if fn != "thanks.html")
+    urls = "".join(f"<url><loc>{SITE_URL}/{'' if fn == 'index.html' else fn}</loc></url>" for fn in list(pages) + opp_fns if fn not in ("thanks.html", "404.html"))
     open(os.path.join(DIST, "sitemap.xml"), "w").write(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>')
     open(os.path.join(DIST, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n")
-    open(os.path.join(DIST, "404.html"), "w").write(page("404.html", "Page Not Found | Projexian", "Page not found.", """
-<div class="wrap"><div class="phead" style="min-height:60vh"><div class="label">404</div><h1 class="display">This page <em>isn't here.</em></h1>
-<div style="grid-column:4/12;margin-top:34px"><a class="link" href="index.html">Return home <span class="ar"></span></a></div></div></div>"""))
     print("built", len(pages), "pages")
 
 
