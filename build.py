@@ -148,7 +148,7 @@ def money(v):
     return "$" + format(int(v or 0), ",")
 
 
-EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+\s*(?:@|\(at\)|\[at\])\s*[A-Za-z0-9.\-]+\.(?:gov|mil|com|org|net|edu|us)\b", re.I)
+EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+\s*(?:@|\(at\)|\[at\])\s*[A-Za-z0-9\-]+(?:\s*[.,]+\s*[A-Za-z0-9\-]+)*\.[A-Za-z]{2,}\b", re.I)
 PHONE_RE = re.compile(r"(?<!\d)(?:\+?1[\s.\-]?)?\(?\d{3}\)?[\s.\-]\d{3}[\s.\-]\d{4}(?:\s*(?:x|ext\.?)\s*\d+)?(?!\d)", re.I)
 
 
