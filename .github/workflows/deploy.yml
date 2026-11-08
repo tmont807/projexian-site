@@ -37,7 +37,7 @@ jobs:
           done
       - name: Build
         env:
-          SITE_URL: ${{ vars.SITE_URL || 'https://tmont807.github.io/projexian-site' }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://projexian.com' }}
         run: python build.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
