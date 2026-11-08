@@ -87,7 +87,7 @@ def form_hidden(subject, next_page="thanks.html"):
     return (f'<input type="hidden" name="_subject" value="{subject}">'
             f'<input type="hidden" name="_template" value="table">'
             f'<input type="hidden" name="_next" value="{SITE_URL}/{next_page}" data-next="{next_page}">'
-            f'<div class="hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>')
+            f'<div class="hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div><input type="hidden" name="_captcha" value="false">')
 
 
 INDUSTRIES = [
