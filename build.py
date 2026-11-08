@@ -7,7 +7,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 DIST = os.path.join(ROOT, "dist")
 SITE_URL = os.environ.get("SITE_URL", "https://projexian.com").rstrip("/")
 CSP = ("default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; "
-       "connect-src 'self'; form-action https://formsubmit.co; base-uri 'self'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests")
+       "connect-src 'self'; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests")
 EMAIL = "tyler@projexian.com"
 PHONE = "630-888-8182"
 FORM_ACTION = "https://formsubmit.co/e5dd4572fbddccd0c37788c16b9b27ad"  # FormSubmit alias for tyler@projexian.com
