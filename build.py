@@ -180,7 +180,7 @@ def opp_page(i, feed, awards):
     inquire = "contact.html?topic=contracting&opp=" + urllib.parse.quote(f'{i["t"]} ({where}, due {i["due"]})')
     partner = "partners.html?opp=" + urllib.parse.quote(f'{i["t"]} ({where})')
     sam = f'https://sam.gov/opp/{i["id"]}/view' if i.get("id") else "https://sam.gov"
-    rows = [("Agency", i.get("a") or "Federal agency"), ("Place of performance", where), ("Category", f'{cat} · NAICS {i["n"]}'),
+    rows = [("Agency", i.get("a") or "Federal agency"), ("Place of performance", where), ("Category", cat),
             ("Notice type", typ), ("Set-aside", i.get("sa") or "None stated"), ("Posted", fmt_date(i.get("posted", ""))),
             ("Response due", fmt_date(i["due"])), ("Solicitation no.", i.get("sol") or "See notice")]
     spec = "".join(f'<div class="r"><span>{e(k)}</span><span>{e(v)}</span></div>' for k, v in rows)
@@ -276,7 +276,7 @@ def build():
   <p class="lead rv">Navigating the government marketplace requires strategy, research, and the right business relationships. We help businesses identify opportunities, strengthen their market position, and pursue meaningful growth.</p>
   <div class="facts rv">
     <div class="fact"><div class="k">Coverage</div><div class="v">Nationwide</div><div class="d">All 50 states and U.S. territories</div></div>
-    <div class="fact"><div class="k">Registered</div><div class="v">13 NAICS codes</div><div class="d">Facility, waste, rental, freight and support services</div></div>
+    <div class="fact"><div class="k">Services</div><div class="v">Facility &amp; site support</div><div class="d">Janitorial, grounds, snow, pest, waste and rentals</div></div>
     <div class="fact"><div class="k">Structure</div><div class="v">Small business</div><div class="d">Active SAM.gov entity registration</div></div>
   </div>
 </div></section>
@@ -385,7 +385,7 @@ def build():
 <section class="svc-block white" id="teaming"><div class="wrap split">
   <div style="grid-column:1/6" class="rv"><div class="label"><span class="n">02·b</span>For prime contractors</div><h2 class="h2" style="margin-top:18px">Teaming with <em>prime contractors.</em></h2>
     <p class="body">Large primes need dependable small businesses to perform parts of their contracts and meet their small business subcontracting goals. Projexian can join your team as a registered small business subcontractor.</p>
-    <p class="src" style="margin-top:22px">UEI MAVQJ6NPEL59 · CAGE 25TN9 · NAICS 561210, 561720, 561730 and more</p>
+    <p class="src" style="margin-top:22px">UEI MAVQJ6NPEL59 · CAGE 25TN9</p>
     <a class="btn" style="margin-top:28px" href="contact.html?topic=teaming">Discuss teaming</a></div>
   <div style="grid-column:7/13" class="rv">
     <div class="label">What we bring</div>
@@ -433,7 +433,6 @@ def build():
         flip = i % 2 == 1
         pic = f'<div style="grid-column:{"7/13" if flip else "1/7"};grid-row:1">{img(ph, alt, "rv")}</div>'
         txt = f'''<div style="grid-column:{"1/6" if flip else "8/13"};grid-row:1" class="rv"><div class="no">{i+1:02d}</div><h2>{name}</h2><p class="body">{text}</p>
-<div class="cats"><b>Example procurement categories</b>{"".join(f"<span>{c}</span>" for c in cats)}</div>
 <a class="link" href="contact.html?topic=contracting&amp;industry={slug}">Inquire about {name.lower()} <span class="ar"></span></a></div>'''
         rows.append(f'<section class="ind" id="{slug}">{pic}{txt}</section>')
     pages["industries.html"] = page("industries.html", "Industries We Serve | Projexian",
@@ -514,7 +513,7 @@ def build():
     <div class="cred"><div class="k">UEI</div><div class="v">MAVQJ6NPEL59</div></div>
     <div class="cred"><div class="k">CAGE</div><div class="v">25TN9</div></div>
     <div class="cred"><div class="k">Business size</div><div class="v">Small business</div></div>
-    <div class="cred"><div class="k">NAICS codes</div><div class="v">13 registered</div></div>
+    <div class="cred"><div class="k">Founded</div><div class="v">2026</div></div>
   </div>
   <div style="margin-top:36px;display:flex;gap:24px;flex-wrap:wrap;align-items:center" class="rv"><a class="btn" href="assets/projexian-capabilities-statement.pdf">Download Capabilities Statement <span aria-hidden="true">↓</span></a><a class="link" href="industries.html">Industries we serve <span class="ar"></span></a></div>
 </div></section>
