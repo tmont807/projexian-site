@@ -434,7 +434,7 @@ def build():
   <div style="grid-column:7/13" class="rv"><div class="num">05</div><h2 class="h2">IT Procurement <em>&amp; Renewals.</em></h2>
     <p class="body">Agencies renew support on their network equipment, servers and software every year, and buy new hardware and licenses on tight timelines. We find these requirements, price them through our partners and deliver complete, compliant quotes.</p>
     <ul class="items"><li>Hardware support renewals</li><li>Software support and subscription renewals</li><li>Network equipment and wireless</li><li>Servers and storage</li><li>Software licensing</li><li>Line-by-line pricing against serial-numbered equipment lists</li></ul>
-    <p class="body" style="margin-top:26px">We supply through authorized manufacturer partners, sourcing from brands including Hewlett Packard Enterprise and Aruba, Cisco, Dell, Microsoft, VMware and Palo Alto Networks.</p>
+    <p class="body" style="margin-top:26px">We supply through authorized manufacturer partners.</p>
     <a class="link" style="margin-top:30px" href="contact.html?topic=contracting&amp;industry=information-technology">Request an IT Quote <span class="ar"></span></a>
   </div>
 </div></section>
